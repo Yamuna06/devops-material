@@ -1,0 +1,333 @@
+Linux Administration
+
+-- pure secured os
+-- multi taking
+-- open source
+
+linux
+--------
+centos
+ubuntu
+kalios
+
+unix
+-----
+solaris -oracle- hardware based system
+AIX - IBM
+HP-UX
+
+Protocal - Port
+SSH       - 22
+telnet     - 23
+nfs         - 2049 // parllel syncing eg: irctc - we are booking ticket diff place that data should be sysc.
+FTP       - 2921
+http        - 80
+https      - 443
+tomcat   - 8080
+
+id -a user // to see user details
+id -a root // to see root user details
+reboot  // to reboot
+sudo su - // taking root access
+sudo - user
+cat /etc/shells // to list shells
+echo $0 // display which shell using
+sh - to switch to another shell just mention which shell you want
+man useradd // to get help on any command
+useradd -h // to get help
+
+File System
+---------------
+file structure
+
+/usr   /var  /home /etc /bin /dev /tmp
+
+usr/etc - Configuration struff
+bin      -  Binary related 
+dev     -  All device attached  stuff
+
+pwd  // to see current location
+ls -ld Batch/  
+
+1) Create a directory in perticualar path
+     ls -ld /tmp/java/mydir/mdata
+     mkdir -p /tmp/java/mydir/mdata
+    -p - parent
+
+Umask values
+777 -  666
+
+2) Create 2 files and change the permissions
+    see the permissions with noramal user and root user
+
+Change Permissions
+chmod -R 666 Raja
+ls /lRt Raja/
+
+change Group
+
+/etc/passwdch
+/etc/group
+grep root /etc/group - grep- what exactly pattern want
+
+grep mygroup /etc/group
+
+3) change the group for perticular directory
+
+change owner permission
+chown root:mygroup Raja/ -R
+
+ls -lRth Raja/  // to see the dir recursively
+
+cat test -a   // line number
+
+4) Creae /Devops/QA create 2 files do copy and move
+
+
+Logs:
+-------
+/var/log 
+
+secure - this file have logs what are the commands enterd
+
+tail -10 messages // last 10 line
+head -10 messages // first 10 lines
+less messages
+more message // page wise
+
+Find commands:
+---------------------
+find / -iname test2   -i - ignore caps or small 
+find - whether existing or not
+grep - pattern search
+
+Advance Commands:
+---------------------------
+Editors:
+
+nano
+vi
+vim
+
+2 modes
+
+esc - when want do operation copy,paste,cut user esc
+insert - modify data
+
+:q!  !- overrite symbol
+
+curser:
+gg - first line
+shift + g - last line
+
+Hi Team  
+Shift $ // end of the line
+shift 0  // home of the line
+
+set nu // set the numbers
+
+:1 // to go perticular line
+
+delete line -- dd
+undo delete - u
+redo delete - ctrl+R
+
+copy line -- yy
+paste line -- p
+
+
+Ctl + A - to select all content
+copy content
+space
+open file and paste
+
+Replace the content
+
+Shift + A
+
+Hung State:Task Manager
+Monitoring jobs:
+---------------------
+top
+
+jomby process can kill bcoz does not have parent process
+solution: restart
+defunct - those process are jomby process
+
+PR - perority
+NI - nice value
+SHR - shared memory
+RES- Reserver
+%CPU - how much cpu consumeted
+Shift + P
+Shift + M
+
+Buffers - IO's
+vmstat 2 3 // stastics of system every 2 sec 3 iteration
+vmstat 2 5
+
+pwdx 1324
+ps -ef|grep -i 1324
+kill -9 1324
+-9 - forcefully killing
+
+service logstash restart
+
+Memory:
+swapspace:
+cache storage - infrequest data
+
+google it - what is bottle neck memory
+
+User Mgmt:
+user1 belongs to group1,group2,group3
+useradd -u 1095 -g 2085 -s /bin/bash -d " Test user comment"  javahome
+groupadd mygroup -g 2085
+id -a java_home
+grep java /etc/passwd
+cat /etc/shells
+su - java_home
+user attributes can changes
+
+set the password
+passwd java_home
+gpassword -a java_home testgroup
+
+reset password:
+chage -l java_home
+chage -w 10 java_home
+
+change the root password
+init 6
+
+ifconfig eth0
+
+runlevel
+hostname server
+
+partition - fragmentation
+
+
+standard partition
+primary - 4 partition can do
+extetend
+logical
+
+50 GB
+p p p e
+E -
+logical
+file system formates
+
+ext2
+ext3
+ext4
+XFS
+
+Partition:
+df -dh
+df -dT
+cat /etc/fstab
+
+fdsik -
+i
+lsblk
+mkfs.ext4 /dev/sdb
+pvcreate
+vgcreate
+vgs
+lvcreate -L +1G -m mylv
+
+mount -T ext4 /dev/sdb1 /mkdir
+mount -t ext4 /dev/myvg/
+fdisk -cu /dev/sdb
+
+add hardware 5GB 
+add filesystem 
+
+create physical volume
+create logical volume
+create increase filesystem size
+lvextend -L +2G /dev/mapper/myvg-mylv
+resizelfs /dev/mapper/myvg-mylv
+lvs
+
+- - -
+- // control
+- target
+- LUN
+
+mirraring - data replicate
+
+Package Mgmt:
+
+.rpm - redhot package update manager - rpm will not resolve dependencies
+yum - yellowlog update manager
+
+N/w file system:
+hostname
+uname -a
+
+create 2 m/c and import and export data each other
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
